@@ -1,0 +1,35 @@
+<style>
+.blog{
+    background-color: white;
+    padding: 5px;
+    border: 3px dashed black;
+}
+body
+{
+    background-color: cadetblue;
+}
+.heading{
+    background-color: white;
+    font-size: larger;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+</style>
+<div class="heading">
+    <h1>BLOG</h1>
+   
+</div>
+{% for p in posts reversed %}
+<div class="Blog">
+  <a  style = "text-decoration: none; color: black;"   href="/read/{{p.id}}">
+    <h3><b>{{p.title}}</b></h3><br>
+    <h4><b><i>{{p.date}}</i></b></h4>
+    <p>
+        {{p.body | truncatewords:20}}
+    </p>
+  </a>
+    
+
+</div><br>
+{% endfor %}
